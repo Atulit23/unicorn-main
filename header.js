@@ -59,12 +59,14 @@ async function handleUpload() {
         res?.data?.map(async (item) => {
           console.log(res.data)
           for(let i = 0; i < names.length; i++){
-            if(item?.name?.toLowerCase().includes(names[i]?.toLowerCase()) || item?.description?.toLowerCase().includes(names[i]?.toLowerCase())){
-              // alert('Found One')
-              // console.log(item)
-              // console.log(names[i])
-              window.location = "contentDetails.html?" + item.id
-              break
+            for(let j = 0; j < names[i].split(" ").length; j++){
+              if(item?.name?.toLowerCase().includes(names[i].split(" ")[j]?.toLowerCase()) || item?.description?.toLowerCase().includes(names[i].split(" ")[j]?.toLowerCase())){
+                // alert('Found One')
+                // console.log(item)
+                // console.log(names[i])
+                window.location = "contentDetails.html?" + item.id
+                break
+              }
             }
           }
           // getOutput({

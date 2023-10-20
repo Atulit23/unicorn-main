@@ -63,7 +63,6 @@ async function decreaseQuantity(itemId) {
             const getData = {
               loginId: localStorage.getItem("loginId"),
             };
-
             await axios
               .post(getUrl, getData)
               .then((res) => {

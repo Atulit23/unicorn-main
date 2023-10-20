@@ -4,7 +4,7 @@ async function decreaseQuantity(itemId) {
   const quantityElement = document.getElementById(`quantity${itemId}`);
   let currentQuantity = parseInt(quantityElement.textContent);
   
-  if(currentQuantity > 1){
+  if(currentQuantity >= 1){
     quantityElement.textContent = currentQuantity - 1;
   }
 

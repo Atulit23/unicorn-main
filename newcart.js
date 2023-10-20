@@ -3,7 +3,10 @@ const cart = document.getElementById("cart");
 async function decreaseQuantity(itemId) {
   const quantityElement = document.getElementById(`quantity${itemId}`);
   let currentQuantity = parseInt(quantityElement.textContent);
-  quantityElement.textContent = currentQuantity - 1;
+  
+  if(currentQuantity > 1){
+    quantityElement.textContent = currentQuantity - 1;
+  }
 
   await axios
     .post("https://unicorn-backend-new.vercel.app/get-single-item", {

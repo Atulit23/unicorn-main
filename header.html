@@ -32,7 +32,9 @@
           </div>
           <!-- COLLCETIONS ON WEBSITE -->
           <div id="collection">
-            <input type="file" id="fileUpload" onchange="handleUpload()"/>
+            <label for="fileUpload">Upload Image</label>
+            <input type="file" id="fileUpload" name="fileUpload" onchange="handleUpload()" style="display: none;"/>
+            <span style="cursor: pointer;" onclick="takeToVr()">VR View</apan>
           </div>
           <!-- SEARCH SECTION -->
           <div id="search">

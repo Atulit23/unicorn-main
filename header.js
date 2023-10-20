@@ -82,3 +82,7 @@ async function handleUpload() {
       });
   });
 }
+
+function takeToVr() {
+  window.location = "https://653267ab5e3448009aa77d40--bejewelled-quokka-8ef411.netlify.app/"
+}

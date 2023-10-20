@@ -111,17 +111,18 @@ function dynamicContentDetails(ob) {
         amount: "1"
     };
 
-    axios.post(apiUrl, postData).then(res => {
+    axios.post(apiUrl, postData).then(async (res) => {
       console.log(res.data)
+      await axios.post(getUrl, getData).then(res => {
+        document.getElementById("badge").innerHTML = res.data.length
+      }).catch(err => {
+        console.log(err)
+      })
     }).catch(err => {
       console.log(err)
     })
 
-    axios.post(getUrl, getData).then(res => {
-      document.getElementById("badge").innerHTML = res.data.length
-    }).catch(err => {
-      console.log(err)
-    })
+  
 
     let order = id + " ";
     let counter = 1;
